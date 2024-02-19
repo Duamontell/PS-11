@@ -54,14 +54,14 @@ color: #2E2E2E;
 #Home {
     width: 39px;
     height: 20px;
-    margin-top: 10px;
-    margin-left: 19.61px;
-    font-family: Oxygen;
+    margin: 0px;
+    padding: 10px 0px 10px 20px;
     font-size: 12px;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0.6000000238418579px;
     text-align: left;
+    color: rgba(46, 46, 46, 1);
 }
 #DivAbout {
     width: 81px;
@@ -73,11 +73,36 @@ color: #2E2E2E;
 #About {
     width: 41px;
     height: 20px;
-    margin: 10px 20px 10px 20px;
-    font-family: Oxygen;    
+    margin: 10px 20px 10px 20px;    
     font-size: 11px;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0.6000000238418579px;
     text-align: left;
+    color: rgba(46, 46, 46, 1);
+}
+#DivContact {
+    width: 98px;
+    height: 40px;
+    position: absolute;
+    margin-left: 278.61px;
+    top: 0px;
+}
+#Contact {
+    width: 58px;
+    height: 20px;
+    margin: 10px 20px 10px 20px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.6000000238418579px;
+    text-align: left;
+    color: rgba(46, 46, 46, 1);
+}
+#DivCategories {
+    width: 118px;
+    height: 40px;
+    position: absolute;
+    margin-left: 79.61px;
+    top: auto;
 }
