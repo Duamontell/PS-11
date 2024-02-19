@@ -1,0 +1,86 @@
+body {
+    width: 1440px;
+    height: 2600px;
+    top: -1344px;
+    left: -720px;
+}
+#DownPanel {
+    width: 1440px;
+    height: 89px;
+    top: 2600px;
+}
+#Main{
+    width: 1440px;
+    height: 2600px;
+}
+#Navigation {
+    width: 1440px;
+    height: 74px;
+}
+#MainImage {
+    width: 1440px;
+    height: 534px;
+    top: 360px;
+    border-radius: 3px;
+}
+#Frame1 {
+    width: 940px;
+    height: 40px;
+    top: 17px;
+    left: 250px;
+    position: absolute;
+}
+h1 {
+width: 92px;
+height: 26px;
+top: 3px;
+position: absolute;
+font-family: Lora;
+font-size: 26px;
+font-weight: 400;
+line-height: 26px;
+color: #2E2E2E;
+}
+#rectangle {
+    width: 1440px;
+    height: 74px;
+    position: absolute;
+}
+#NavPan {
+    width: 376.61px;
+    height: 40px;
+    left: 563.39px;
+    position: absolute;
+    font-family: Oxygen;
+    text-transform: uppercase;
+}
+#Home {
+    width: 39px;
+    height: 20px;
+    top: 10px;
+    left: 19.61px;
+    font-family: Oxygen;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.6000000238418579px;
+    text-align: left;
+}
+#DivAbout {
+    width: 81px;
+    height: 40px;
+    left: 197.61px;
+    position: absolute;
+}
+#About {
+    width: 41px;
+    height: 20px;
+    top: 10px;
+    left: 20px;
+    font-family: Oxygen;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.6000000238418579px;
+    text-align: left;
+}
