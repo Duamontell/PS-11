@@ -3,6 +3,7 @@ body {
     height: 2600px;
     top: -1344px;
     left: -720px;
+    margin: 0px;
 }
 #DownPanel {
     width: 1440px;
@@ -16,6 +17,7 @@ body {
 #Navigation {
     width: 1440px;
     height: 74px;
+    position: relative;
 }
 #MainImage {
     width: 1440px;
@@ -26,39 +28,34 @@ body {
 #Frame1 {
     width: 940px;
     height: 40px;
-    top: 17px;
-    left: 250px;
-    position: absolute;
+    margin-top: 17px;
+    margin-left: 250px;
+    position: relative;
 }
 h1 {
 width: 92px;
 height: 26px;
-top: 3px;
-position: absolute;
+padding-top: 3px;
 font-family: Lora;
 font-size: 26px;
 font-weight: 400;
 line-height: 26px;
 color: #2E2E2E;
 }
-#rectangle {
-    width: 1440px;
-    height: 74px;
-    position: absolute;
-}
 #NavPan {
     width: 376.61px;
     height: 40px;
-    left: 563.39px;
     position: absolute;
+    padding-left: 563.39px;
+    top: 0px;
     font-family: Oxygen;
     text-transform: uppercase;
 }
 #Home {
     width: 39px;
     height: 20px;
-    top: 10px;
-    left: 19.61px;
+    margin-top: 10px;
+    margin-left: 19.61px;
     font-family: Oxygen;
     font-size: 12px;
     font-weight: 400;
@@ -69,15 +66,15 @@ color: #2E2E2E;
 #DivAbout {
     width: 81px;
     height: 40px;
-    left: 197.61px;
     position: absolute;
+    padding-left: 197.61px;
+    top: 0px;
 }
 #About {
     width: 41px;
     height: 20px;
-    top: 10px;
-    left: 20px;
-    font-family: Oxygen;
+    margin: 10px 20px 10px 20px;
+    font-family: Oxygen;    
     font-size: 11px;
     font-weight: 400;
     line-height: 20px;
