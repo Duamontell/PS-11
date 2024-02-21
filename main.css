@@ -1,40 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
-    width: 1440px;
-    height: 2600px;
+    width: 100%;
+    height: 2689px;
     top: -1344px;
     left: -720px;
-    margin: 0px;
-}
-#DownPanel {
-    width: 1440px;
-    height: 89px;
-    top: 2600px;
-}
-#Main{
-    width: 1440px;
-    height: 2600px;
+    margin: 0 auto;
 }
 #Navigation {
     width: 1440px;
     height: 74px;
     position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
 }
-#MainImage {
-    width: 1440px;
-    height: 534px;
-    top: 360px;
-    border-radius: 3px;
-}
+
 #Frame1 {
     width: 940px;
     height: 40px;
-    margin-top: 17px;
-    margin-left: 250px;
-    position: relative;
+    margin: 0px;
+    top: 17px;
+    left: 250px;
+    position: absolute;
+    display: flex;
 }
-h1 {
+h2 {
 width: 92px;
 height: 26px;
+margin: 0px;
 padding-top: 3px;
 font-family: Lora;
 font-size: 26px;
@@ -51,6 +47,12 @@ color: #2E2E2E;
     font-family: Oxygen;
     text-transform: uppercase;
 }
+#DivHome {
+    width: 79.6px;
+    height: 40px;
+    position: absolute;
+    top: 0px;
+}
 #Home {
     width: 39px;
     height: 20px;
@@ -63,17 +65,38 @@ color: #2E2E2E;
     text-align: left;
     color: rgba(46, 46, 46, 1);
 }
+#DivCategories {
+    width: 118px;
+    height: 40px;
+    position: absolute;
+    margin-left: 79.61px;
+    top: 0px;
+}
+#Categories {
+    width: 78px;
+    height: 20px;
+    margin: 0px;
+    padding: 10px 20px 10px 20px;
+    font-family: Oxygen;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.6000000238418579px;
+    text-align: left;
+    color: rgba(46, 46, 46, 1);
+}
 #DivAbout {
     width: 81px;
     height: 40px;
     position: absolute;
-    padding-left: 197.61px;
+    margin-left: 197.61px;
     top: 0px;
 }
 #About {
     width: 41px;
     height: 20px;
-    margin: 10px 20px 10px 20px;    
+    margin: 0;
+    padding: 10px 20px 10px 20px;    
     font-size: 11px;
     font-weight: 400;
     line-height: 20px;
@@ -81,6 +104,7 @@ color: #2E2E2E;
     text-align: left;
     color: rgba(46, 46, 46, 1);
 }
+
 #DivContact {
     width: 98px;
     height: 40px;
@@ -91,7 +115,8 @@ color: #2E2E2E;
 #Contact {
     width: 58px;
     height: 20px;
-    margin: 10px 20px 10px 20px;
+    margin: 0;
+    padding: 10px 20px 10px 20px;
     font-size: 12px;
     font-weight: 400;
     line-height: 20px;
@@ -99,10 +124,167 @@ color: #2E2E2E;
     text-align: left;
     color: rgba(46, 46, 46, 1);
 }
-#DivCategories {
-    width: 118px;
-    height: 40px;
+#Head {
+    width: 940px;
+    height: 159px;
+    top: 89px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+h1 {
+    width: 498px;
+    height: 51px;
+    margin: 0px;
+    padding-left: 221px;
+    font-family: Lora;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 51px;
+    letter-spacing: 2px;
+    top: -7px;
     position: absolute;
-    margin-left: 79.61px;
-    top: auto;
+    color: rgba(46, 46, 46, 1);
+}
+
+h3 {
+    width: 504px;
+    height: 20px;
+    margin: 0px;
+    padding-top: 64px;
+    padding-left: 218px;
+    padding-bottom: 75px;
+    font-family: Oxygen;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    position: absolute;
+    color: rgba(46, 46, 46, 0.63);
+}
+#IdImage {
+    width: 100%;
+    height: 534px;
+    top: 360px;
+    border-radius: 3px;
+    position: absolute;
+}
+#MainImage {
+    width: 100%;
+    height: 534px;
+    left: 0%;
+    right: 0%;
+    border-radius: 3px;
+    position: relative;
+    align-items: center;
+}
+#MainText {
+    width: 1440px;
+    height: 1706px;
+    top: 661px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.TextFormating {
+    width: 960px;
+    height: 1431px;
+    padding: 140px 240px 135px 240px;
+    font-family: Oxygen;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+#BottomPanel {
+    width: 100%;
+    height: 89px;
+    top: 2600px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    background: url(BottomImage.png);
+}
+#Rectangle {
+    width: 100%;
+    height: 89px;
+    position: absolute;
+    background: rgba(35, 47, 56, 0.6);
+}
+#BottomNavPan {
+    width: 960px;
+    height: 34px;
+    padding-top: 28px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+h4 {
+    width: 92px;
+    height: 26px;
+    padding-top: 3px;
+    padding-left: 10px;
+    font-family: Lora;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+#DHome {
+    width: 37px;
+    height: 26px;
+    position: absolute;
+    padding: 3px 245px 5px 678px;
+    font-family: Oxygen;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 1px;
+    text-align: right;
+    color: rgba(255, 255, 255, 1);
+}
+#DCategories {
+    width: 76px;
+    height: 26px;
+    position: absolute;
+    padding: 3px 149px 5px 735px;
+    font-family: Oxygen;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 1px;
+    text-align: right;
+    color: rgba(255, 255, 255, 1);
+}
+#DAbout {
+    width: 42px;
+    height: 26px;
+    position: absolute;
+    padding: 3px 87px 5px 831px;
+    font-family: Oxygen;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 1px;
+    text-align: right;
+    color: rgba(255, 255, 255, 1);   
+}
+#DContact {
+    width: 57px;
+    height: 26px;
+    position: absolute;
+    padding: 3px 10px 5px 893px;
+    font-family: Oxygen;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 1px;
+    text-align: right;
+    color: rgba(255, 255, 255, 1);
 }
