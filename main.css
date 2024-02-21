@@ -235,6 +235,7 @@ h4 {
     letter-spacing: 0em;
     text-align: left;
     color: rgba(255, 255, 255, 1);
+    z-index: 10;
 }
 #DHome {
     width: 37px;
@@ -247,7 +248,8 @@ h4 {
     line-height: 26px;
     letter-spacing: 1px;
     text-align: right;
-    color: rgba(255, 255, 255, 1);
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
 }
 #DCategories {
     width: 76px;
@@ -260,7 +262,8 @@ h4 {
     line-height: 26px;
     letter-spacing: 1px;
     text-align: right;
-    color: rgba(255, 255, 255, 1);
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
 }
 #DAbout {
     width: 42px;
@@ -273,7 +276,8 @@ h4 {
     line-height: 26px;
     letter-spacing: 1px;
     text-align: right;
-    color: rgba(255, 255, 255, 1);   
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);   
 }
 #DContact {
     width: 57px;
@@ -286,5 +290,6 @@ h4 {
     line-height: 26px;
     letter-spacing: 1px;
     text-align: right;
-    color: rgba(255, 255, 255, 1);
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
 }
