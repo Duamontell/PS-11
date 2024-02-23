@@ -30,6 +30,7 @@
 .header-navigation-list {
     display: inline;
     padding: 0px;
+    height: 40px;
 }
 .list {
     height: 40px;
@@ -40,9 +41,9 @@
     font-family: Oxygen;
     font-size: 12px;
     font-weight: 400;
-    line-height: 20px;
     letter-spacing: 0.6000000238418579px;
-    text-transform: uppercase;  
+    text-transform: uppercase;
+    color: rgba(46, 46, 46, 1)
 }
 .home {
     width: 60.61px; 
@@ -56,4 +57,93 @@
 }
 .contact {
     width: 98px ;
+}
+.main-tittle {
+    box-sizing: content-box;
+    width: 940px;
+    height: 159px;
+    margin-top: 89px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1 {
+    position: relative;
+    width: 498px;
+    height: 51px;
+    top: -7px;
+    left: 221px;
+    font-family: Lora;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 51px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: rgba(46, 46, 46, 1);
+}
+h2 {
+    position: relative;
+    width: 504px;
+    height: 20px;
+    top: 20px;
+    left: 218px;
+    font-family: Oxygen;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgba(46, 46, 46, 0.63);
+}
+.main-image {
+    width: 100%;
+    height: 534px;
+    margin-top: 38px;
+    border-radius: 3px;
+}
+.main-block {
+    height: 1706px;
+    background-color: rgba(2, 247, 247, 0.3);
+}
+.main-block-text {
+    width: 960px;
+    height: 1431px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 140px;
+    font-family: Oxygen;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(16, 19, 21, 1);
+}
+.bottom {
+    height: 89px;
+    /*position: relative;*/
+    background-color: rgba(77, 86, 93, 1);
+    background-image: url("../Images/BottomImage.png");
+}
+.bottom-panel {
+    /*position: absolute;*/
+    position: relative;
+    width: 960px;
+    height: 34px;
+    padding-left: 240px;
+    top: 18px;
+}
+.bottom-background-opacity {
+    /*position: absolute;*/
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(35, 47, 56, 0.6);
+    top: -34px;
+}
+.bottom-logo {
+    position: relative;
+    width: 92px;
+    height: 26px;
+    top: 3px;
+    left: 10px;        
 }
