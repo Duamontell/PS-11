@@ -1,297 +1,199 @@
 * {
     margin: 0;
-    padding: 0;
 }
-body {
-    width: 100%;
-    height: 2689px;
-    top: -1344px;
-    left: -720px;
-    margin: 0 auto;
-}
-#Navigation {
-    width: 1440px;
+.header {
     height: 74px;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
+    box-sizing: content-box;
 }
-#Frame1 {
+.header-panel {
     width: 940px;
     height: 40px;
-    margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
     top: 17px;
-    left: 250px;
-    position: absolute;
-    display: flex;
+    position: relative;
+    font-size: 0px;
 }
-h2 {
-width: 92px;
-height: 26px;
-margin: 0px;
-padding-top: 3px;
-font-family: Lora;
-font-size: 26px;
-font-weight: 400;
-line-height: 26px;
-color: #2E2E2E;
+.header-logo {
+    width: 92px;
+    height: 26px;
+    position: relative;
+    top: 3px;
+    display: inline;
+    float: left;
 }
-#PictureEscape {
-    background-image: url(../SVG/Escape..svg);
-}
-#NavPan {
+.header-nav {
     width: 376.61px;
     height: 40px;
-    position: absolute;
-    padding-left: 563.39px;
-    top: 0px;
+    line-height: 40px;
+    left: 471.39px;
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+}
+.header-nav-list {
+    height: 40px;
+    list-style-type: none;
+    padding: 0px;
+    font-size: 0px;
+}
+.header-list {
+    display: inline-block;
+    text-align: center;
     font-family: Oxygen;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.6000000238418579px;
     text-transform: uppercase;
-}
-#DivHome {
-    width: 79.6px;
-    height: 40px;
-    position: absolute;
-    top: 0px;
-}
-#Home {
-    width: 39px;
-    height: 20px;
-    margin: 0px;
-    padding: 10px 0px 10px 20px;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0.6000000238418579px;
-    text-align: left;
     color: rgba(46, 46, 46, 1);
 }
-#DivCategories {
+.header-home {
+    width: 79.61px;
+}
+.header-categories {
     width: 118px;
-    height: 40px;
-    position: absolute;
-    margin-left: 79.61px;
-    top: 0px;
 }
-#Categories {
-    width: 78px;
-    height: 20px;
-    margin: 0px;
-    padding: 10px 20px 10px 20px;
-    font-family: Oxygen;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0.6000000238418579px;
-    text-align: left;
-    color: rgba(46, 46, 46, 1);
-}
-#DivAbout {
+.header-about {
     width: 81px;
-    height: 40px;
-    position: absolute;
-    margin-left: 197.61px;
-    top: 0px;
-}
-#About {
-    width: 41px;
-    height: 20px;
-    margin: 0;
-    padding: 10px 20px 10px 20px;    
     font-size: 11px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0.6000000238418579px;
-    text-align: left;
-    color: rgba(46, 46, 46, 1);
+}
+.header-contact {
+    width: 98px;
 }
 
-#DivContact {
-    width: 98px;
-    height: 40px;
-    position: absolute;
-    margin-left: 278.61px;
-    top: 0px;
-}
-#Contact {
-    width: 58px;
-    height: 20px;
-    margin: 0;
-    padding: 10px 20px 10px 20px;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0.6000000238418579px;
-    text-align: left;
-    color: rgba(46, 46, 46, 1);
-}
-#Head {
+.main-tittle {
+    box-sizing: content-box;
     width: 940px;
     height: 159px;
-    top: 89px;
-    position: relative;
-    text-align: center;
-    display: flex;
+    margin-top: 89px;
     margin-left: auto;
     margin-right: auto;
-
 }
 h1 {
+    position: relative;
     width: 498px;
     height: 51px;
-    margin: 0px;
-    padding-left: 221px;
+    top: -7px;
+    left: 221px;
     font-family: Lora;
     font-size: 50px;
     font-weight: 400;
     line-height: 51px;
     letter-spacing: 2px;
-    top: -7px;
-    position: absolute;
+    text-align: center;
     color: rgba(46, 46, 46, 1);
 }
-
-h3 {
+h2 {
+    position: relative;
     width: 504px;
     height: 20px;
-    margin: 0px;
-    padding-top: 64px;
-    padding-left: 218px;
-    padding-bottom: 75px;
+    top: 20px;
+    left: 218px;
     font-family: Oxygen;
     font-size: 17px;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0em;
-    position: absolute;
+    text-align: center;
     color: rgba(46, 46, 46, 0.63);
 }
-#IdImage {
+.main-image {
     width: 100%;
     height: 534px;
-    top: 360px;
+    margin-top: 38px;
     border-radius: 3px;
-    position: absolute;
+    display: block;
 }
-#MainImage {
-    width: 100%;
-    height: 534px;
-    left: 0%;
-    right: 0%;
-    border-radius: 3px;
-    position: relative;
-    align-items: center;
-}
-#MainText {
-    width: 1440px;
+.main-block {
     height: 1706px;
-    top: 661px;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: rgba(247, 247, 247, 1)
 }
-.TextFormating {
+.main-block-text {
     width: 960px;
     height: 1431px;
-    padding: 140px 240px 135px 240px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 140px;
     font-family: Oxygen;
     font-size: 24px;
     font-weight: 400;
     line-height: 35px;
     letter-spacing: 0em;
     text-align: left;
+    color: rgba(16, 19, 21, 1);
 }
-#BottomPanel {
-    width: 100%;
+.bottom {
     height: 89px;
-    top: 2600px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    background: url('/Users/maks2/PS-11/Images/BottomImage.png');
+    background-color: rgba(77, 86, 93, 1);
+    background-image: url("../Images/BottomImage.png");
+    background-size: 100% 100%;
 }
-#Rectangle {
-    width: 100%;
-    height: 89px;
-    position: absolute;
-    background: rgba(35, 47, 56, 0.6);
-}
-#BottomNavPan {
+.bottom-panel {
+    position: relative;
     width: 960px;
     height: 34px;
-    padding-top: 28px;
-    display: flex;
     margin-left: auto;
     margin-right: auto;
+    top: 18px;
+    font-size: 0px;
 }
-h4 {
+.bottom-background-opacity {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(35, 47, 56, 0.6);
+    top: -34px;
+    z-index: 0;
+}
+.bottom-logo {
+    position: relative;
     width: 92px;
     height: 26px;
-    padding-top: 3px;
-    padding-left: 10px;
-    font-family: Lora;
-    font-size: 26px;
-    font-weight: 400;
-    line-height: 26px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: rgba(255, 255, 255, 1);
-    z-index: 10;
+    top: 3px;
+    left: 10px;
+    display: inline;
+    float: left;
+    z-index: 1;        
 }
-#DHome {
+.bottom-nav {
+    width: 282px;
+    height: 32px;
+    line-height: 32px;
+    left: 576px;
+    position: relative;
+    display: inline-block;
+    font-size: 11px;
+    z-index: 1;
+}
+.bottom-nav-list {
+    list-style-type: none;
+    height: 32px;
+    padding: 0px;
+    font-size: 0px;
+}
+.bottom-list {
+    display: inline-block;
+    text-align: center;
+    font-family: Oxygen;
+    font-family: Oxygen;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+}
+.bottom-list:not(:first-of-type) {
+    margin-left: 20px;
+}
+.bottom-home {
     width: 37px;
-    height: 26px;
-    position: absolute;
-    padding: 3px 245px 5px 678px;
-    font-family: Oxygen;
-    font-size: 11px;
-    font-weight: 400;
-    line-height: 26px;
-    letter-spacing: 1px;
-    text-align: right;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
 }
-#DCategories {
+.bottom-categories {
     width: 76px;
-    height: 26px;
-    position: absolute;
-    padding: 3px 149px 5px 735px;
-    font-family: Oxygen;
-    font-size: 11px;
-    font-weight: 400;
-    line-height: 26px;
-    letter-spacing: 1px;
-    text-align: right;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
 }
-#DAbout {
+.bottom-about {
     width: 42px;
-    height: 26px;
-    position: absolute;
-    padding: 3px 87px 5px 831px;
-    font-family: Oxygen;
-    font-size: 11px;
-    font-weight: 400;
-    line-height: 26px;
-    letter-spacing: 1px;
-    text-align: right;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);   
 }
-#DContact {
+.bottom-contact {
     width: 57px;
-    height: 26px;
-    position: absolute;
-    padding: 3px 10px 5px 893px;
-    font-family: Oxygen;
-    font-size: 11px;
-    font-weight: 400;
-    line-height: 26px;
-    letter-spacing: 1px;
-    text-align: right;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
 }
