@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+}
+
+.header {
+    background-image: url("../Images/MountainDesert.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.header-panel {
+    margin: 0 auto;
+    padding-top: 17px;
+    max-width: 940px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header-panel__logo {
+    margin-top: 3px;
+    height: 26px;
+}
+
+.header-navigation__list {
+    display: flex;
+    flex-wrap: wrap;
+    height: 40px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.header-button {
+    color: white;
+    text-decoration: none;
+}
+
+.header-navigation__list-element {
+    padding: 10px 20px;
+    font-family: Oxygen, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.6;
+    text-align: left;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+}
+
+.header-tittle {
+    margin-top: 127px;
+    padding-bottom: 157px;
+}
+
+.main-tittle {
+    font-family: Lora, sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 51px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    position: relative;
+    bottom: 7px;
+}
+
+.sub-tittle {
+    font-family: Oxygen, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.63);
+    margin-top: 13px;
+}
+
+.button-lasts-post {
+    display: block;
+    width: 167px;
+    height: 44px;
+    margin: 31px auto 0;
+    font-family: Oxygen, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    border-width: 0;
+    border-radius: 3px;
+    background-color: rgba(221, 120, 63, 1);
+    padding: 12px 31px;
+}
+
+.menu-panel {
+    margin: 0 auto 0;
+    max-width: 960px;
+}
+
+.menu-panel__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    align-content: center;
+    text-align: center;
+    justify-content: space-around;
+}
+.menu-panel__list-element {
+    width: 139px;
+    font-family: Lora, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 65px;
+    letter-spacing: 0em;
+    color: rgba(118, 128, 136, 1);
+}
+
+.featured-posts {
+    max-width: 940px;
+    height: 414px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.featured-posts__tittle {
+    margin: 60px auto 0;
+    padding-bottom: 16px;
+    font-family: Oxygen, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: rgba(46, 46, 46, 1);
+}
+
+.featured-posts__line {
+    width: 188px;
+    height: 1px;
+    background-color: rgba(222, 222, 222, 1);
+    margin: 0 auto;
+}
+
+.featured-posts_posts {
+    height: 294px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.featured-posts__post-left {
+    width: 460px;
+    height: 280px;
+    background-image: url("../Images/the-road-ahead.png");
+    background-size: cover;
+    border-radius: 3px;
+}
+
+.featured-posts__post-left__type {
+    width: 108px;
+    height: 26px;
+    border-radius: 2px;
+    margin: 20px 0 0 20px;
+    background-color: rgba(168, 114, 183, 1);
+    color: white;
+    font-family: Oxygen, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: center;
+    text-transform: uppercase;
+    display: none;
+}
+
+.featured-posts__post-left__tittle {
+    margin-top: 157px;
+    max-width: 204px;
+    font-family: Lora, sans-serif;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+    margin-left: 20px;
+}
+
+.featured-posts__post-left__sub-tittle {
+    font-family: Oxygen, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 6px;
+    margin-left: 20px;
+}
+
+.featured-posts__post-left__info {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 420px;
+    height: 35px;
+    margin-top: 12px;
+    padding-bottom: 15px;
+}
+
+.featured-posts__post-left_author {
+    width: 26px;
+    height: 26px;
+    border-radius: 60px;
+}

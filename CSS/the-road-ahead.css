@@ -121,7 +121,6 @@
 
 .main-block-text {
     width: 960px;
-    /* Поменять на padding */
     margin-left: auto;
     margin-right: auto;
     padding-top: 140px;
@@ -175,7 +174,6 @@
     width: 30%;
     height: 32px;
     line-height: 32px;
-    /* Заменить на margin-left */
     position: relative;
     font-size: 11px;
     z-index: 1;
