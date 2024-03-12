@@ -405,7 +405,6 @@ a {
 }
 
 .footer {
-    height: 89px;
     background-color: rgba(77, 86, 93, 1);
     background-image: url("../Images/BottomImage.png");
     background-size: cover;
@@ -427,7 +426,7 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 28px 0 27px;
+    padding: 31px 0 32px;
 }
 
 .footer-panel__logo {
