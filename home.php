@@ -20,7 +20,7 @@
             <img class="header-panel__logo" src="Images/SVG/Escape-white.svg" alt="Logo Escape">
             <nav class="header-navigation">
                 <ul class="header-navigation__list">
-                    <li class="header-navigation__list-element"><a href="index.html">Home</a></li>
+                    <li class="header-navigation__list-element"><a href="#">Home</a></li>
                     <li class="header-navigation__list-element">Categories</li>
                     <li class="header-navigation__list-element">About</li>
                     <li class="header-navigation__list-element">Contact</li>
@@ -52,7 +52,7 @@
             <div class="posts">
                 <div class="featured-posts__post-left">
                     <div class="featured-posts__post-left__type">Photography</div>
-                    <h3 class="featured-posts__tittle"><a href="the-road-ahead.html">The Road Ahead</a></h3>
+                    <h3 class="featured-posts__tittle"><a href="post.php">The Road Ahead</a></h3>
                     <h4 class="featured-posts__sub-tittle">The road ahead might be paved - it might not be.</h4>
                     <div class="featured-posts__info">
                         <img class="posts__author" src="Images/MatVogels.jfif" alt="Mat Vogels author">
