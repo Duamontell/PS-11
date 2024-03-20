@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>The Road Ahead</title>
-    <link rel="stylesheet" href="CSS/the-road-ahead.css">
+    <link rel="stylesheet" href="css/the-road-ahead.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
 <body>
     <header class="header">
         <div class="header-panel">
-            <img class="header-logo" src="Images/SVG/Escape-black..svg" alt="Logo Escape">
+            <img class="header-logo" src="images/SVG/Escape-black..svg" alt="Logo Escape">
             <nav class="header-nav">
                 <ul class="header-nav-list">
                     <li class="header-list header-home">Home</li>
@@ -31,7 +31,7 @@
         <h1 class="tittle">The Road Ahead</h1>
         <h2 class="sub-tittle">The road ahead might be paved - it might not be.</h2>
     </div>
-    <img class="main-image" src="Images/Image.jpg" alt="Northern lights">
+    <img class="main-image" src="images/Image.jpg" alt="Northern lights">
     <div class="main-block">
         <p class="main-block-text">Dark spruce forest frowned on either side the frozen waterway. The trees had been
             stripped by a recent wind of their white covering of frost, and they seemed to lean towards each other,
@@ -69,7 +69,7 @@
     </div>
     <div class="bottom">
         <div class="bottom-panel">
-            <img class="bottom-logo" src="Images/SVG/Escape-white.svg" alt="Logo Escape">
+            <img class="bottom-logo" src="images/SVG/Escape-white.svg" alt="Logo Escape">
             <nav class="bottom-nav">
                 <ul class="bottom-nav-list">
                     <li class="bottom-list bottom-home">Home</li>

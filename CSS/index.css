@@ -8,7 +8,7 @@ a {
 }
 
 .header {
-    background-image: url("../Images/MountainDesert.png");
+    background-image: url("../images/MountainDesert.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -161,7 +161,7 @@ a {
 
 .featured-posts__post-left {
     width: 460px;
-    background-image: url("../Images/the-road-ahead.png");
+    background-image: url("../images/the-road-ahead.png");
     background-size: cover;
     border-radius: 3px;
     margin: 7px 0;
@@ -180,7 +180,7 @@ a {
     letter-spacing: 0em;
     text-align: center;
     text-transform: uppercase;
-    opacity: 0;
+    opacity: 1;
 }
 
 .featured-posts__tittle {
@@ -249,7 +249,7 @@ a {
 
 .featured-posts__post-right {
     width: 460px;
-    background-image: url("../Images/FromTopDown.jfif");
+    background-image: url("../images/FromTopDown.jfif");
     background-size: cover;
     border-radius: 3px;
 }
@@ -406,7 +406,7 @@ a {
 
 .footer {
     background-color: rgba(77, 86, 93, 1);
-    background-image: url("../Images/BottomImage.png");
+    background-image: url("../images/BottomImage.png");
     background-size: cover;
     position: relative;
 }
