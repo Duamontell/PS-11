@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(247, 247, 247, 1);
+}
+
+header {
+    background: rgba(46, 46, 46, 1);
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
+
+.panel {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 17px;
+    padding-top: 17px;
+    margin: 0 auto;
+    max-width: 1179px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    margin: 7px 0 7px;
+    height: 26px;
+}
+
+.panel__menu {
+    width: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 40px;
+    gap: 8px;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 20px;
+    background: rgba(221, 120, 63, 1);
+    color: white;
+    text-align: center;
+    font-family: Oxygen, sans-serif;
+}
+
+.logout-button {
+    height: 24px;
+}
+
+.new-post-publish {
+    max-width: 1180px;
+    padding-top: 138px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-family: Lora, sans-serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.subtitle {
+    margin-top: 8px;
+    font-family: Oxygen, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: rgba(46, 46, 46, 0.63);
+}
+
+.publish-button {
+    background: rgba(221, 120, 63, 1);
+    color: white;
+    height: 48px;
+    width: 100px;
+    border-radius: 3px;
+    border-style: none;
+    font-family: Oxygen, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.main-information {
+    max-width: 1180px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 32px auto 0;
+    gap: 16px;
+}
+
+.main-information-top {
+    width: 100%;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 6px 12px -10px rgba(0, 0, 0, 0.2);
+}
+
+.main-information__title {
+    margin: 40px 0 0 40px;
+    font-family: Lora, sans-serif;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.post {
+    max-width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px auto 0;
+}
+
+.post-form {
+    max-width: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.post-input-info {
+    max-width: 560px;
+    position: relative;
+    margin-top: 40px;
+    /* max-height: 61px; */
+}
+
+.post-input-info:first-child {
+    margin-top: 0px;
+}
+
+.small-titles {
+    font-family: Oxygen, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: rgba(122, 122, 122, 1);
+
+}
+
+.input-text {
+    width: 100%;
+    border: 0px;
+    border-bottom: 1px solid rgba(46, 46, 46, 1);
+    background-color: rgba(247, 247, 247, 1);
+    height: 40px;
+    line-height: 40px;
+    margin-top: 5px;
+    padding-top: 1px;
+    border-radius: 5px 5px 0px 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 1px;
+    font-family: Oxygen, sans-serif;
+    font-size: 16px;
+    outline-color: transparent;
+    box-sizing: border-box;
+    color: rgba(46, 46, 46, 1);
+}
+
+.input-text:focus {
+    border-bottom: 2px solid rgba(46, 46, 46, 1);
+    background-color: rgba(247, 247, 247, 1);
+}
+
+.input-text::placeholder {
+    color: rgba(46, 46, 46, 1);
+    line-height: 40px;
+    /* background-color: rgba(247, 247, 247, 1); */
+}
+
+.input-error {
+    margin-top: 5px;
+    font-family: Oxygen, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(232, 105, 97, 1);
+    display: none;
+}
+
+.photo-upload-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+#image-container {
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    background: rgba(247, 247, 247, 1);
+}
+
+#author-photo-input {
+    display: none;
+}
+
+.upload-panel {
+    display: flex;
+    gap: 8px;
+}
+
+#camera-picture {
+    display: none;
+}
+
+#upload-author-image {
+    font-family: Oxygen, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(46, 46, 46, 1);
+    border: 0;
+    background-color: white;
+    cursor: pointer;
+}
+
+#author-remove-panel {
+    display: none;
+    gap: 8px;
+}
+
+#remove-author-image {
+    background-color: white;
+    border: 0px;
+    font-family: Oxygen, sans-serif;
+    font-size: 16px;
+    color: rgba(232, 105, 97, 1);
+    cursor: pointer;
+}
+
+#author-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    /* background: rgba(247, 247, 247, 1); */
+}

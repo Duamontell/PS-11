@@ -159,16 +159,25 @@ a {
     margin-top: 16px;
 }
 
-.featured-posts__post-left {
+.featured-posts__post {
     width: 460px;
-    background-image: url("../images/the-road-ahead.png");
-    background-size: cover;
-    border-radius: 3px;
     margin: 7px 0;
+    position: relative;
 }
 
-.featured-posts__post-left__type {
+.featured-post__picture {
+    position: absolute;
+    border-radius: 3px;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.post-type__photography {
     width: 108px;
+    position: relative;
     border-radius: 2px;
     margin: 20px 0 0 20px;
     background-color: rgba(168, 114, 183, 1);
@@ -185,7 +194,7 @@ a {
 
 .featured-posts__tittle {
     margin-top: 111px;
-    max-width: 204px;
+    position: relative;
     font-family: Lora, sans-serif;
     font-size: 27px;
     font-weight: 400;
@@ -199,6 +208,7 @@ a {
 .featured-posts__sub-tittle {
     font-family: Oxygen, sans-serif;
     font-size: 14px;
+    position: relative;
     font-weight: 400;
     line-height: 25px;
     letter-spacing: 0em;
@@ -206,10 +216,12 @@ a {
     color: rgba(255, 255, 255, 0.7);
     margin-top: 6px;
     margin-left: 20px;
+    display: inline-block;
 }
 
 .featured-posts__info {
     display: flex;
+    position: relative;
     flex-wrap: wrap;
     max-width: 420px;
     margin-top: 12px;
@@ -220,6 +232,7 @@ a {
 
 .posts__author {
     width: 26px;
+    position: relative;
     height: 26px;
     border-radius: 60px;
     margin-top: 5px;
@@ -227,6 +240,7 @@ a {
 
 .featured-posts__author-name {
     color: rgba(255, 255, 255, 0.7);
+    position: relative;
     font-family: Oxygen, sans-serif;
     font-size: 12px;
     font-weight: 400;
@@ -238,6 +252,7 @@ a {
 
 .featured-posts__author-date {
     font-family: Oxygen, sans-serif;
+    position: relative;
     color: rgba(255, 255, 255, 0.7);
     margin-left: auto;
     font-size: 12px;
@@ -247,16 +262,10 @@ a {
     text-align: center;
 }
 
-.featured-posts__post-right {
-    width: 460px;
-    background-image: url("../images/FromTopDown.jfif");
-    background-size: cover;
-    border-radius: 3px;
-}
-
-.featured-posts__post-right__type {
+.post-type__adventure {
     width: 87px;
     border-radius: 2px;
+    position: relative;
     margin: 20px 0 0 20px;
     background-color: rgba(221, 120, 63, 1);
     color: white;
@@ -312,29 +321,35 @@ a {
     line-height: 22px;
     position: relative;
     z-index: 1;
+    text-transform: uppercase;
 }
 
-.type-one {
+.post-type__featured {
+    margin-top: 20px;
+    line-height: 26px;
+}
+
+.type-nature {
     background-color: rgba(230, 199, 40, 1);
     width: 49px;
 }
 
-.type-two {
+.type-photography {
     background-color: rgba(168, 114, 183, 1);
     width: 85px;
 }
 
-.type-third {
+.type-relaxation {
     background-color: rgba(74, 174, 194, 1);
     width: 70px;
 }
 
-.type-fourth {
+.type-vacation {
     background-color: rgba(210, 95, 124, 1);
     width: 57px;
 }
 
-.type-fifth {
+.type-travel {
     background-color: rgba(73, 174, 92, 1);
     width: 47px;
 }
@@ -356,20 +371,13 @@ a {
 
 .most-recent__sub-tittle {
     color: rgba(122, 122, 122, 1);
+    min-height: 51px;
     font-family: Oxygen, sans-serif;
     font-size: 13px;
     font-weight: 400;
     line-height: 19px;
     letter-spacing: 0em;
-    margin: 6px 0 0 13px;
-}
-
-.second-line {
-    margin-top: 32px;
-}
-
-.second-post-line {
-    margin-top: 12px;
+    margin: 6px 5px 0 13px;
 }
 
 .most-recent__post-info {

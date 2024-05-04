@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <script src="js\admin.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="panel">
+            <img class="header-logo" src="images\SVG\escape-author.svg" alt="Logo Escape">
+            <div class="panel__menu">
+                <div class="user-avatar">N</div>
+                <img class="logout-button" src="images\SVG\logout-white.svg" alt="Logout button">
+            </div>
+        </div>
+    </header>
+    <div class="new-post-publish">
+        <div>
+            <h1 class="title">New Post</h1>
+            <h2 class="subtitle">Fill out the form bellow and publish your article</h2>
+        </div>
+        <button type="button" class="publish-button">Publish</button>
+        <script>
+            // document.querySelector('.publish-button').addEventListener('click', function () {
+            //     let title = document.getElementById('title-input').value.trim();
+            //     let description = document.getElementById('description-input').value.trim();
+            //     let author = document.getElementById('author-input').value.trim();
+
+            // function checkInput(inputValue, error, inputSelector) {
+            //     if (inputValue === '') {
+            //         document.querySelector(error).style.display = 'block';
+            //         document.querySelector(inputSelector).style.borderBottom = '1px solid rgba(232, 105, 97, 1)';
+            //         document.querySelector(inputSelector).style.backgroundColor = 'rgba(255, 255, 255, 1)';
+            //         return;
+            //     } else {
+            //         // document.querySelector(error).style.display = 'none';
+            //         // document.querySelector(inputSelector).style.borderBottom = '1px solid rgba(46, 46, 46, 1)';
+            //         // document.querySelector(inputSelector).style.backgroundColor = 'rgba(247, 247, 247, 1)';
+            //         document.querySelector(inputSelector).removeAttribute('style');
+            //         document.querySelector(error).removeAttribute('style');
+            //     }
+            // }
+
+            // checkInput(title, '#title-input-error', '#title-input');
+            // checkInput(description, '#description-input-error', '#description-input');
+            // checkInput(author, '#author-input-error', '#author-input');
+
+            // const inputFields = document.querySelectorAll('.input-text');
+
+            // // Для каждого поля ввода добавляем обработчик события input
+            // inputFields.forEach(input => {
+            //     input.addEventListener('input', function () {
+            //         // Удаляем инлайновые стили у данного поля ввода
+            //         this.removeAttribute('style');
+            //     });
+            // });
+
+            // if (title === '') {
+            //     document.querySelector('#title-input-error').style.display = 'block';
+            //     document.querySelector('#title-input').style.borderBottom = '1px solid rgba(232, 105, 97, 1)';
+            //     document.querySelector('#title-input').style.backgroundColor = 'rgba(255, 255, 255, 1)';
+            // } else {
+            //     document.querySelector('#title-input-error').style.display = 'none';
+            //     document.querySelector('#title-input').style.borderBottom = '1px solid rgba(46, 46, 46, 1)';
+            // }
+            // if (description === '') {
+            //     document.querySelector('#description-input-error').style.display = 'block';
+            //     document.querySelector('#description-input').style.borderBottom = '1px solid rgba(232, 105, 97, 1)';
+            //     document.querySelector('#description-input').style.backgroundColor = 'rgba(255, 255, 255, 1)';
+            //     // return;
+            // } else {
+            //     document.querySelector('#description-input-error').style.display = 'none';
+            //     document.querySelector('#description-input').style.borderBottom = '1px solid rgba(46, 46, 46, 1)';
+            // }
+
+            //     let jsonData = {
+            //         "Post title": title,
+            //         'Description': description,
+            //         'Author-name': author,
+            //     }
+            //     console.log(JSON.stringify(jsonData, null, 3));
+            // });
+
+            document.querySelector('.publish-button').addEventListener('click', function () {
+                validateInputs();
+            });
+
+        </script>
+    </div>
+    <div class="main-information">
+        <div class="main-information-top">
+            <h2 class="main-information__title">Main Information</h2>
+            <div class="post">
+                <form class="post-form">
+                    <div class="post-input-info">
+                        <h3 class="small-titles">Title</h3>
+                        <input id="title-input" class="input-text" type="text" placeholder="New Post" required size="62"
+                            maxlength="90">
+                        <div id="title-input-error" class="input-error">Title is required.</div>
+                    </div>
+                    <div class="post-input-info">
+                        <h3 class="small-titles">Short description</h3>
+                        <input id="description-input" class="input-text" type="text"
+                            placeholder="Please, enter any description" required size="90" maxlength="150">
+                        <div id="description-input-error" class="input-error">Description is required.</div>
+                    </div>
+                    <div class="post-input-info">
+                        <h3 class="small-titles">Author name</h3>
+                        <input id="author-input" class="input-text" type="text" placeholder="Please, enter author name"
+                            required maxlength="90">
+                        <div id="author-input-error" class="input-error">Author name is required.</div>
+                    </div>
+                    <div class="post-input-info">
+                        <h3 class="small-titles">Author Photo </h3>
+                        <div class="photo-upload-container">
+                            <div id="image-container">
+                                <img id="author-photo" src="images\SVG\author-photo-placeholder.svg">
+                            </div>
+                            <input id="author-photo-input" type="file">
+                            <div class="upload-panel">
+                                <img id="camera-picture" src="images\SVG\camera.svg">
+                                <button type=button id='upload-author-image'
+                                    onclick="document.getElementById('author-photo-input').click()">Upload</button>
+                            </div>
+                            <div id="author-remove-panel">
+                                <img class="trash-can" src="images\SVG\trash-can.svg">
+                                <button type="button" id="remove-author-image">Remove</button>
+                            </div>
+                            <script>
+                                document.getElementById('author-photo-input').addEventListener('change', handleImageChange);
+                            </script>
+                        </div>
+                    </div>
+                </form>
+                <div class="post-preview">
+                </div>
+            </div>
+        </div>
+        <div class="main-information-bottom">
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.input-text').forEach(input => {
+            input.addEventListener('input', () => {
+                input.removeAttribute('style');
+            });
+        });
+        document.getElementById('remove-author-image').addEventListener('click', function () {
+            const placeholderSrc = 'images/SVG/author-photo-placeholder.svg';
+            document.getElementById('author-photo').src = placeholderSrc;
+        });
+
+    </script>
+</body>
+
+</html>

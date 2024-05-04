@@ -1,13 +1,48 @@
 <?php
-$posts = [
- [
-   'title' => 'The Road Ahead',
-   'subtitle' => 'The road ahead might be paved - it might not be',
-   'img_modifier' => 'images',
-   'author' => 'Mat Vogels',
-   'category' => 'Photography'
- ],
-];
+
+const HOST = 'localhost';
+const USERNAME = 'root';
+const PASSWORD = '';
+const DATABASE = 'blog';
+
+function createDBConnection(): mysqli {
+  $conn = new mysqli(HOST, USERNAME, PASSWORD, DATABASE);
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+  return $conn;
+}
+
+function closeDBConnection(mysqli $conn): void {
+  $conn->close();
+}
+
+function getAndPrintFeaturedPostsFromDB(mysqli $conn): void // Разделить печать и чтение
+{
+    $sql = "SELECT * FROM post WHERE featured = 1"; // Запрос для выборки только "featured" постов
+    $result = $conn->query($sql);   
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            include 'post-preview.php'; // Используем шаблон для вывода "featured" постов
+        }
+    } else {
+        echo "0 results";
+    }
+}
+function getAndPrintMostRecentsPostsFromDB(mysqli $conn): void // Разделить печать и чтение
+{    $sql = "SELECT * FROM post WHERE featured = 0"; // Запрос для выборки только "most-recent" постов
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+       while ($row = $result->fetch_assoc()) {
+           include 'most-recent_preview.php'; // Используем шаблон для вывода "most-recent" постов
+       }
+    } else {
+       echo "0 results";
+    }
+}
+
+$conn = createDBConnection();
+
 ?>
 
 
@@ -30,7 +65,7 @@ $posts = [
 <body>
     <div class="header">
         <div class="header-panel">
-            <img class="header-panel__logo" src="images/SVG/Escape-white.svg" alt="Logo Escape">
+            <img class="header-panel__logo" src="http://localhost/images/SVG/Escape-white.svg" alt="Logo Escape">
             <nav class="header-navigation">
                 <ul class="header-navigation__list">
                     <li class="header-navigation__list-element"><a href="#">Home</a></li>
@@ -63,138 +98,25 @@ $posts = [
             <h3 class="posts__main-tittle">Featured Posts</h3>
             <div class="posts__line"></div>
             <div class="posts">
-                <?php 
-                    foreach ($posts as $post) {
-                    include 'post_preview.php';
-                }
+                <?php
+                    getAndPrintFeaturedPostsFromDB($conn);
                 ?>
-
-
-                <!-- <div class="featured-posts__post-left">
-                    <div class="featured-posts__post-left__type">Photography</div>
-                    <h3 class="featured-posts__tittle"><a href="post.php">The Road Ahead</a></h3>
-                    <h4 class="featured-posts__sub-tittle">The road ahead might be paved - it might not be.</h4>
-                    <div class="featured-posts__info">
-                        <img class="posts__author" src="images/MatVogels.jfif" alt="Mat Vogels author">
-                        <p class="featured-posts__author-name">Mat Vogels</p>
-                        <p class="featured-posts__author-date">September 25, 2015</p>
-                    </div>
-                </div> -->
-                <div class="featured-posts__post-right">
-                    <div class="featured-posts__post-right__type">Adventure</div>
-                    <h3 class="featured-posts__tittle">From Top Down</h3>
-                    <h4 class="featured-posts__sub-tittle">Once a year, go someplace you’ve never been before.</h4>
-                    <div class="featured-posts__info">
-                        <img class="posts__author" src="images/WilliamWong.jfif" alt="William Wong author">
-                        <p class="featured-posts__author-name">William Wong</p>
-                        <p class="featured-posts__author-date">September 25, 2015</p>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="posts__block">
             <h3 class="posts__main-tittle">Most Recent</h3>
             <div class="posts__line"></div>
             <div class="posts">
-                <div class="most-recent__post">
-                    <div class="image-border">
-                        <img class="post__picture" src="images/StillStandingTall.jfif" alt="Still Standing Tall">
-                        <div class="post-type type-one">Nature</div>
-                    </div>
-                    <div class="border-line"></div>
-                    <h3 class="most-recent__tittle">Still Standing Tall</h3>
-                    <h4 class="most-recent__sub-tittle">Life begins at the end of your comfort zone.</h4>
-                    <div class="border-line second-line"></div>
-                    <div class="most-recent__post-info">
-                        <img class="posts__author" src="images/WilliamWong.jfif" alt="William Wong author">
-                        <p class="most-recent__post-author">William Wong</p>
-                        <p class="most-recent__post-date">9/25/2015</p>
-                    </div>
-                </div>
-                <div class="most-recent__post">
-                    <div class="image-border">
-                        <img class="post__picture" src="images/SunnySideUp.jfif" alt="Still Standing Tall">
-                        <div class="post-type type-two">Photography</div>
-                    </div>
-                    <div class="border-line"></div>
-                    <h3 class="most-recent__tittle">Sunny Side Up</h3>
-                    <h4 class="most-recent__sub-tittle">No place is ever as bad as they tell you it’s going to be.</h4>
-                    <div class="border-line second-post-line"></div>
-                    <div class="most-recent__post-info">
-                        <img class="posts__author" src="images/MatVogels.jfif" alt="Mat Vogels author">
-                        <p class="most-recent__post-author">Mat Vogels</p>
-                        <p class="most-recent__post-date">9/25/2015</p>
-                    </div>
-                </div>
-                <div class="most-recent__post">
-                    <div class="image-border">
-                        <img class="post__picture" src="images/WaterFalls.jfif" alt="Still Standing Tall">
-                        <div class="post-type type-third">Relaxation</div>
-                    </div>
-                    <div class="border-line"></div>
-                    <h3 class="most-recent__tittle">Water Falls</h3>
-                    <h4 class="most-recent__sub-tittle">We travel not to escape life, but for life not to escape us.
-                    </h4>
-                    <div class="border-line second-post-line"></div>
-                    <div class="most-recent__post-info">
-                        <img class="posts__author" src="images/MatVogels.jfif" alt="Mat Vogels author">
-                        <p class="most-recent__post-author">Mat Vogels</p>
-                        <p class="most-recent__post-date">9/25/2015</p>
-                    </div>
-                </div>
-                <div class="most-recent__post">
-                    <div class="image-border">
-                        <img class="post__picture" src="images/ThroughtheMist.jfif" alt="Still Standing Tall">
-                        <div class="post-type type-fourth">Vacation</div>
-                    </div>
-                    <div class="border-line"></div>
-                    <h3 class="most-recent__tittle">Through the Mist</h3>
-                    <h4 class="most-recent__sub-tittle">Travel makes you see what a tiny place you occupy in the world.
-                    </h4>
-                    <div class="border-line second-post-line"></div>
-                    <div class="most-recent__post-info">
-                        <img class="posts__author" src="images/WilliamWong.jfif" alt="William Wong author">
-                        <p class="most-recent__post-author">William Wong</p>
-                        <p class="most-recent__post-date">9/25/2015</p>
-                    </div>
-                </div>
-                <div class="most-recent__post">
-                    <div class="image-border">
-                        <img class="post__picture" src="images/AwakenEarly.jfif" alt="Still Standing Tall">
-                        <div class="post-type type-fourth">Vacation</div>
-                    </div>
-                    <div class="border-line"></div>
-                    <h3 class="most-recent__tittle">Awaken Early</h3>
-                    <h4 class="most-recent__sub-tittle">Not all those who wander are lost.</h4>
-                    <div class="border-line second-line"></div>
-                    <div class="most-recent__post-info">
-                        <img class="posts__author" src="images/MatVogels.jfif" alt="Mat Vogels author">
-                        <p class="most-recent__post-author">Mat Vogels</p>
-                        <p class="most-recent__post-date">9/25/2015</p>
-                    </div>
-                </div>
-                <div class="most-recent__post">
-                    <div class="image-border">
-                        <img class="post__picture" src="images/TryitAlways.jfif" alt="Still Standing Tall">
-                        <div class="post-type type-fifth">Travel</div>
-                    </div>
-                    <div class="border-line"></div>
-                    <h3 class="most-recent__tittle">Try it Always</h3>
-                    <h4 class="most-recent__sub-tittle">The world is a book, and those who do not travel read only one
-                        page.</h4>
-                    <div class="border-line second-post-line"></div>
-                    <div class="most-recent__post-info">
-                        <img class="posts__author" src="images/MatVogels.jfif" alt="Mat Vogels author">
-                        <p class="most-recent__post-author">Mat Vogels</p>
-                        <p class="most-recent__post-date">9/25/2015</p>
-                    </div>
-                </div>
+                <?php
+                    getAndPrintMostRecentsPostsFromDB($conn);
+                    closeDBConnection($conn);
+                ?>
             </div>
         </div>
     </div>
     <div class="footer">
         <div class="footer-panel">
-            <img class="footer-panel__logo" src="images/SVG/Escape-white.svg" alt="Logo Escape">
+            <img class="footer-panel__logo" src="http://localhost/images/SVG/Escape-white.svg" alt="Logo Escape">
             <ul class="footer-nav">
                 <li>Home</li>
                 <li>Categories</li>
