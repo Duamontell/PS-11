@@ -5,54 +5,50 @@ const USERNAME = 'root';
 const PASSWORD = '';
 const DATABASE = 'blog';
 
-function createDBConnection(): mysqli {
-  $conn = new mysqli(HOST, USERNAME, PASSWORD, DATABASE);
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-  return $conn;
+function createDBConnection(): mysqli
+{
+    $conn = new mysqli(HOST, USERNAME, PASSWORD, DATABASE);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    return $conn;
 }
 
 function getAndPrintPostFromDB(mysqli $conn): void
-{    
-    global $row, $id;    
-    $sql = "SELECT * FROM post WHERE id = $id"; // Запрос для выборки только "featured" постов
+{
+    global $row, $id;
+    $sql = "SELECT * FROM post WHERE id = $id";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
-        $row = $result ->fetch_assoc();
+        $row = $result->fetch_assoc();
         include 'post_template.php';
     } else {
         echo "0 results";
     }
 }
 
-function closeDBConnection(mysqli $conn): void {
-  $conn->close();
+function closeDBConnection(mysqli $conn): void
+{
+    $conn->close();
 }
 
 $conn = createDBConnection();
 if (isset($_GET['postId']) && is_numeric($_GET['postId'])) {
-    // Если параметр postId был передан в запросе и является числом
     $id = $_GET['postId'];
 
-    // Подготавливаем запрос к базе данных
-    $stmt = $conn->prepare("SELECT * FROM post WHERE id = ?"); //Разобраться с тем что лежит в stmt и почему так называется
-    $stmt->bind_param("i", $id); // Привязываем параметр к запросу
-    $stmt->execute(); // Выполняем запрос
-    $result = $stmt->get_result(); // Получаем результат
+    $stmt = $conn->prepare("SELECT * FROM post WHERE id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // Если запись существует, то отображаем содержимое поста или выполняем другие действия
     } else {
-        // Если запись не существует, выводим сообщение об ошибке или выполняем перенаправление, перенаправляем пользователя на другую страницу
-        
-        header("Location: /error.php"); 
-        exit; // Завершаем выполнение скрипта после перенаправления
+        header("Location: /error.php");
+        exit;
     }
 } else {
-    // Если параметр postId не был передан в запросе или не является числом перенаправляем пользователя на другую страницу
-    header("Location: /error.php"); 
-    exit; 
+    header("Location: /error.php");
+    exit;
 }
 
 ?>

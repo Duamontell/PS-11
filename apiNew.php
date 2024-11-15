@@ -7,16 +7,33 @@ if ($method === 'POST') {
     $data = json_decode($json_data, true);
 
     if ($data !== null) {
-        $image_data = base64_decode($data['image']['data']);
-        $image_filename = $data['image']['filename'];
-        $image_path = 'images/' . $image_filename;
-        $image_result = file_put_contents($image_path, $image_data);
-        $author_url_data = base64_decode($data['author_url']['data']);
+        $image_post_data = base64_decode(preg_replace('/^data:image\/(png|jpeg|gif);base64,/', '', $data['image_post']['image_post_data']));
+        $image_card_data = base64_decode(preg_replace('/^data:image\/(png|jpeg|gif);base64,/', '', $data['image_card']['image_card_data']));
+        $author_url_data = base64_decode(preg_replace('/^data:image\/(png|jpeg|gif);base64,/', '', $data['author_url']['data']));
+
+        // $image_post_data = base64_decode($data['image_post']['image_post_data']);
+        // $image_data = base64_decode($data['image']['data']);
+
+        // $image_card_data = base64_decode($data['image_card']['image_card_data']);
+
+        $image_post_filename = $data['image_post']['image_post_filename'];
+        $image_post_path = 'images/' . $image_post_filename;
+        // $image_filename = $data['image']['filename'];
+        // $image_path = 'images/' . $image_filename;
+
+        $image_card_filename = $data['image_card']['image_card_filename'];
+        $image_card_path = 'images/' . $image_card_filename;
+
+        $image_post_result = file_put_contents($image_post_path, $image_post_data);
+
+        $image_card_result = file_put_contents($image_card_path, $image_card_data);
+
+        // $author_url_data = base64_decode($data['author_url']['data']);
         $author_url_filename = $data['author_url']['author_url_filename'];
         $author_url_path = 'images/' . $author_url_filename;
         $author_url_result = file_put_contents($author_url_path, $author_url_data);
         
-        if ($image_result !== false && $author_url_result !== false) {
+        if ($image_post_result !== false && $image_card_result !== false && $author_url_result !== false) {
             echo "Изображения успешно сохранены";
             $conn = new mysqli("localhost", "root", "", "blog");
             if ($conn->connect_error) {
@@ -28,11 +45,12 @@ if ($method === 'POST') {
             $author = $data['author'];
             $author_url = $author_url_path;
             $publish_date = $data['publish_date'];
-            $image_url = $image_path;
+            $image_post_url = $image_post_path;
+            $image_card_url = $image_card_path;
             $featured = $data['featured'];
-            $sql = "INSERT INTO post (title, subtitle, content, author, author_url, publish_date, image_url, featured) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO post (title, subtitle, content, author, author_url, publish_date, image_url, image_post_url, featured) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssssssi", $title, $subtitle, $content, $author, $author_url, $publish_date, $image_path, $featured);
+            $stmt->bind_param("ssssssssi", $title, $subtitle, $content, $author, $author_url, $publish_date, $image_card_url, $image_post_url, $featured);
             if ($stmt->execute()) {
                 echo "Данные успешно добавлены в базу данных";
             } else {

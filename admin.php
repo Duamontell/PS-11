@@ -28,69 +28,9 @@
         </div>
         <button type="button" class="publish-button">Publish</button>
         <script>
-            // document.querySelector('.publish-button').addEventListener('click', function () {
-            //     let title = document.getElementById('title-input').value.trim();
-            //     let description = document.getElementById('description-input').value.trim();
-            //     let author = document.getElementById('author-input').value.trim();
-
-            // function checkInput(inputValue, error, inputSelector) {
-            //     if (inputValue === '') {
-            //         document.querySelector(error).style.display = 'block';
-            //         document.querySelector(inputSelector).style.borderBottom = '1px solid rgba(232, 105, 97, 1)';
-            //         document.querySelector(inputSelector).style.backgroundColor = 'rgba(255, 255, 255, 1)';
-            //         return;
-            //     } else {
-            //         // document.querySelector(error).style.display = 'none';
-            //         // document.querySelector(inputSelector).style.borderBottom = '1px solid rgba(46, 46, 46, 1)';
-            //         // document.querySelector(inputSelector).style.backgroundColor = 'rgba(247, 247, 247, 1)';
-            //         document.querySelector(inputSelector).removeAttribute('style');
-            //         document.querySelector(error).removeAttribute('style');
-            //     }
-            // }
-
-            // checkInput(title, '#title-input-error', '#title-input');
-            // checkInput(description, '#description-input-error', '#description-input');
-            // checkInput(author, '#author-input-error', '#author-input');
-
-            // const inputFields = document.querySelectorAll('.input-text');
-
-            // // Для каждого поля ввода добавляем обработчик события input
-            // inputFields.forEach(input => {
-            //     input.addEventListener('input', function () {
-            //         // Удаляем инлайновые стили у данного поля ввода
-            //         this.removeAttribute('style');
-            //     });
-            // });
-
-            // if (title === '') {
-            //     document.querySelector('#title-input-error').style.display = 'block';
-            //     document.querySelector('#title-input').style.borderBottom = '1px solid rgba(232, 105, 97, 1)';
-            //     document.querySelector('#title-input').style.backgroundColor = 'rgba(255, 255, 255, 1)';
-            // } else {
-            //     document.querySelector('#title-input-error').style.display = 'none';
-            //     document.querySelector('#title-input').style.borderBottom = '1px solid rgba(46, 46, 46, 1)';
-            // }
-            // if (description === '') {
-            //     document.querySelector('#description-input-error').style.display = 'block';
-            //     document.querySelector('#description-input').style.borderBottom = '1px solid rgba(232, 105, 97, 1)';
-            //     document.querySelector('#description-input').style.backgroundColor = 'rgba(255, 255, 255, 1)';
-            //     // return;
-            // } else {
-            //     document.querySelector('#description-input-error').style.display = 'none';
-            //     document.querySelector('#description-input').style.borderBottom = '1px solid rgba(46, 46, 46, 1)';
-            // }
-
-            //     let jsonData = {
-            //         "Post title": title,
-            //         'Description': description,
-            //         'Author-name': author,
-            //     }
-            //     console.log(JSON.stringify(jsonData, null, 3));
-            // });
             document.querySelector('.publish-button').addEventListener('click', function () {
                 validateInputs();
             });
-
         </script>
     </div>
     <div class="main-information">
@@ -172,7 +112,7 @@
                         </div>
                     </div>
                     <div class="post-input-info">
-                        <h3 class="small-titles">Hero Image </h3>
+                        <h3 class="small-titles">Hero Image</h3>
                         <input id="herosmall-input" class="input-text" type="file" required>
                         <div id="herosmall-container" class="hero-container" style="position: relative;">
                             <img id="herosmall-image" class="hero-image" style="display: none;">
@@ -197,6 +137,20 @@
                         <div id="herosmall-under-info" class="small-titles hero-small-titles">Size up to 5mb. Format:
                             png, jpeg, gif.
                         </div>
+                    </div>
+                    <div class="post-input-info">
+                        <h3 class="small-titles">Select category</h3>
+                        <div class="select-type">
+                        <label>
+                            <input type="radio" name="post-category" value="1" id="featured-type-post">
+                            <span class="type-name">Featured</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="post-category" value="0" id="most-recent-type-post">
+                            <span class="type-name">Most recent</span>
+                        </label>
+                        </div>
+                        <div id="type-post-error" class="input-error">Type post is required.</div>
                     </div>
                 </form>
                 <div class="post-preview">
@@ -300,13 +254,6 @@
                 document.getElementById('preview-author-name').textContent = document.getElementById('author-input').getAttribute('placeholder');
             }
         });
-        // document.getElementById('date-input').addEventListener('input', function() {
-        //     if (document.getElementById('date-input').value.trim() !== '') {        
-        //         document.getElementById('preview-date').textContent = document.getElementById('date-input').value;
-        //     } else {
-        //         document.getElementById('preview-date').textContent = document.getElementById('preview-date').getAttribute('placeholder');
-        //     }
-        // });
         document.getElementById('date-input').addEventListener('change', function () {
             let selectedDate = document.getElementById('date-input').value;
             let formattedDate = formatDate(selectedDate);

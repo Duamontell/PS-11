@@ -1,15 +1,12 @@
 //Функция проверки формы
 function checkInput(inputValue, error, inputSelector) {
-    if (inputValue === '') {
+    if (inputValue === '' || inputValue === null) {
         document.querySelector(error).style.display = 'block';
         document.querySelector(error).style.color = 'rgba(232, 105, 97, 1)';
         document.querySelector(inputSelector).style.borderBottom = '1px solid rgba(232, 105, 97, 1)';
         document.querySelector(inputSelector).style.backgroundColor = 'rgba(255, 255, 255, 1)';
         return true;
     } else {
-        // document.querySelector(error).style.display = 'none';
-        // document.querySelector(inputSelector).style.borderBottom = '1px solid rgba(46, 46, 46, 1)';
-        // document.querySelector(inputSelector).style.backgroundColor = 'rgba(247, 247, 247, 1)';
         document.querySelector(inputSelector).removeAttribute('style');
         document.querySelector(error).style.color = 'rgba(153, 153, 153, 1)';
         return false;
@@ -26,6 +23,9 @@ function validateInputs() {
     let heroBig = document.getElementById('herobig-image').src;
     let heroSmall = document.getElementById('herosmall-image').src;
     let content = document.getElementById('content-input').value.trim();
+    let category = document.querySelector('input[name="post-category"]:checked');
+
+    let featured = category ? category.value : '';
 
     let titleValid = checkInput(title, '#title-input-error', '#title-input');
     let descriptionValid = checkInput(description, '#description-input-error', '#description-input');
@@ -34,8 +34,9 @@ function validateInputs() {
     let dateValid = checkInput(publishDate, '#date-input-error', '#date-input');
     let heroBigValid = checkInput(heroBig, '#herobig-input-error', '#herobig-input');
     let heroSmallValid = checkInput(heroSmall, '#herosmall-input-error', '#herosmall-input');
+    let categoryValid = checkInput(category, '#type-post-error', 'input[name="post-category"]');
 
-    if (titleValid || descriptionValid || authorNameValid || authorPhotoValid || dateValid || heroBigValid || heroSmallValid) {
+    if (titleValid || descriptionValid || authorNameValid || authorPhotoValid || dateValid || heroBigValid || heroSmallValid || categoryValid) {
         document.getElementById('message-block').style.display = 'flex';
         document.getElementById('message-block').style.borderLeft = '2px solid rgba(232, 105, 97, 1)';
         document.getElementById('message-block').style.background = 'rgba(255, 235, 234, 1)';
@@ -50,9 +51,8 @@ function validateInputs() {
         document.getElementById('alert-message').textContent = 'Publish Complete!';
     }
 
-    let timestampPublishDate = Date.parse(publishDate); // Преобразуем дату в timestamp
-
-    // const inputFields = document.querySelectorAll('.input-text');
+    let timestampPublishDateMili = Date.parse(publishDate); // Преобразуем дату в timestamp
+    let timestampPublishDate = Math.floor(timestampPublishDateMili / 1000);
 
     document.querySelectorAll('.input-text').forEach(input => {
         input.addEventListener('input', function () {
@@ -61,17 +61,33 @@ function validateInputs() {
     });
 
     let jsonData = {
-        "Post title": title,
-        'Description': description,
-        'Author-name': authorName,
-        'Author-photo': authorPhoto,
-        'Publish date': timestampPublishDate,
-        'Hero big image': heroBig,
-        'Hero small image': heroSmall,
-        'Content': content,
-
+        "title": title,
+        'subtitle': description,
+        'content': content,
+        'author':  authorName,
+        'author_url': { 
+            'data': authorPhoto, 
+            'author_url_filename': authorName + '.jpg',
+        },
+        'publish_date': timestampPublishDate,
+        'image_post': {
+            'image_post_data': heroBig,
+            'image_post_filename': title + '.jpg',
+        },
+        'image_card': {
+            'image_card_data': heroSmall,
+            'image_card_filename': title + '_card.jpg'
+        },
+        'featured': featured,
     };
     console.log(JSON.stringify(jsonData, null, 3));
+    fetch('https://localhost:8443/apiNEW', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(jsonData)
+    })
 };
 
 // Функция получения картинки автора и декодирования 
@@ -88,7 +104,7 @@ function AuthorImageChange(inputId, imageId, uploadButtonId, cameraImageId, remo
         reader.readAsDataURL(file);
     }, 100);
 
-    document.getElementById('author-photo').removeAttribute('style');
+    document.getElementById(imageId).removeAttribute('style');
     document.getElementById(uploadButtonId).textContent = 'Upload New';
     document.getElementById(cameraImageId).style.display = 'block';
     document.getElementById(removePanelId).style.display = 'flex';

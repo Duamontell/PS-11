@@ -7,7 +7,7 @@
         <?= $row['subtitle'] ?>
     </h2>
 </div>
-<img class="main-image" src="<?= $row['image_url'] ?>" alt="<?= $row['image_url'] ?>">
+<img class="main-image" src="<?= $row['image_post_url'] ?>" alt="<?= $row['title'] ?>">
 <div class="main-block">
     <p class="main-block-text">
         <?= $row['content'] ?>
